@@ -1,0 +1,8 @@
+body{
+    height: auto;
+    width: auto;
+    background:url(image.png);
+    background-size: cover;
+    background-position: left;
+    font-family: 'Times New Roman', Times, serif;
+}

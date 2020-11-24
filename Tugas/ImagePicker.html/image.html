@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Image Picker</title>
+        <script>
+            function pilih(){
+            let bunga = document.getElementById('bunga');
+            //console.log('Pilih Bunga Kesukaan Kamu ' + bunga[1].value)
+            console.log('Index List ' + bunga.selectedIndex);
+            let idx = bunga.selectedIndex;
+            console.log('Pilih Bunga Kesukaan Kamu ' + bunga[idx].value);
+
+            // ambil area gambar
+            let gbr = document.getElementById('gambar');
+            if(idx == 0){
+                gbr.src='gambar/matahari.jpg';
+                gbr.alt='Bunga Matahari';
+            }else if(idx == 1){
+                gbr.src='gambar/mawar merah.jpg';
+                gbr.alt='Bunga Mawar Merah';
+            }else if(idx == 2){
+                gbr.src='gambar/Aster.jpg';
+                gbr.alt='Bunga Aster';
+            }else if(idx == 3){
+                gbr.src='gambar/dahlia.jpg';
+                gbr.alt='Bunga dahlia';
+            }else if(idx == 4){
+                gbr.src='gambar/anggrek.jpg';
+                gbr.alt='Bunga Anggrek';
+            }else if(idx == 5){
+                gbr.src='gambar/telang.jpg';
+                gbr.alt='Bunga telang';
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <form id="frm1">
+           Pilih Bunga Kesukaan kamu : <select id='bunga'  onchange="pilih()">
+                <option value='Matahari'>Matahari</option>
+                <option value="Mawar Merah">Mawar Merah</option>
+                <option value='Aster'>Aster</option>
+                <option value='Dahlia'>Dahlia</option>
+                <option value='Anggrek'>Anggrek</option>
+                <option value='Telang'>Telang</option>
+            </select>
+        </form>
+
+        <div>
+            <img src='gambar/matahari.jpg' id='gambar' alt='Bunga Matahari' >
+        </div>
+        
+    </body>
+</html>

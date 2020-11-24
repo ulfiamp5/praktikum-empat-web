@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Validation</title>
+    <style type='text/css'>
+    </style>
+</head>
+<body>
+    <center>
+		<form method="REQUEST">
+            <h1>Form Validation</h1>
+			Nama Pelanggan :<br>
+            <input type="text" id="nama" name="nama"><br>
+			Email :<br>
+            <input type="email" name="email" id="email"><br>
+            Jam Keberangkatan :<br>
+            <input id="appt-time" type="time" name="appt-time"
+             min="00:00" max="23:59">
+            <span class="validity"></span><br>
+            Tujuan Keberangkatan :<br>
+            <input id='jam' type='text' name='tujuan' value=''><br>
+            Jumlah Tiket (1-10):<br> 
+            <input type="number" id="tentacles" name="tentacles"
+             min="1" max="10"><br>
+			<button type="submit" onclick="return Validation()">SUBMIT</button>
+		</form>
+    </center>
+
+    <script type="text/javascript">
+        function Validation() {
+             nama = document.getElementById('nama').value ;
+             email = document.getElementById('email').value;
+             jam = document.getElementById('apt-time').value;
+             tujuan = document.getElementById('jam').value;
+             jumlah = document.getElementById('tentacles').value;
+
+             
+
+		if (nama == "" || email == "" || jam =="" || tujuan =="" || jumlah == "") {
+			alert("Nama / email / jam / tujuan / jumlah Tidak Boleh Kosong");
+			return false;
+		}
+		else if (nama.value.length > 30) {
+			alert("nama is required");
+			return false;
+        }
+        if(email.value.length <= 0 ) {
+            alert('Email is required');
+            email.focus();
+            return false
+        }
+        if(jam.value.length <= 0 ) {
+            alert('jam keberangkatan is required');
+            jam.focus();
+            return false
+        }
+        if(tujuan.value.length <= 0 ) {
+            alert('tujuan keberangkatan is required');
+            tujuan.focus();
+            return false
+        }
+        if(jumlah.value.length <= 0 ) {
+            alert('jumlah tiket is required');
+            jumlah.focus();
+            return false
+        }
+        }
+    </script>
+    </body>
+    </html>

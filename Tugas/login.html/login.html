@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Login</title>  
+    <link rel="stylesheet" type="text/css" href="style.css">    
+<body style="margin: 100px" >
+    <center>
+        <img src="logo.jpg" class="logo">
+		<form method="REQUEST">
+			Username :<br>
+			<input type="text" placeholder="enter username" id="username" name="username"><br>
+			Password<br>
+			<input type="password"  placeholder="enter password" id="password" name="password"><br>
+			<button type="submit" onclick="return login()">LOGIN</button>
+		</form>
+	</center>
+</body>
+<script type="text/javascript">
+	function login() {
+		username = document.getElementById("username").value;
+		password = document.getElementById("password").value;
+
+		if (username == "" || password == "") {
+			alert("Username / Password Tidak Boleh Kosong");
+			return false;
+		}
+		else if (password.length < 8) {
+			alert("Password Kurang dari 8");
+			return false;
+		}
+		else if (username == "nurulfikri" && password == "qwerty12345") {
+			window.location = "~.html";
+			return false;
+		}else{
+			alert("Username / Password yang dimasukkan salah");
+		}
+	}
+</script>
+</head>
+</html>
